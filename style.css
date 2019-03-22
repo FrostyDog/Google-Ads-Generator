@@ -1,0 +1,33 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1080px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.triggers {
+    margin: 20px;
+}
+
+table {
+    border: 3px black solid;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 3px grey solid;
+    padding: 5px;
+}

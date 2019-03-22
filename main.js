@@ -1,25 +1,4 @@
-// Ad generator for Google Ads 
-
-// triggered components --- 1 or 0
-
-
-
-
-var discounts 
-
-var buy1Get2
-
-var Delivery // fast or free
-
-var ecoFriendly = 1;
-
-var catalogue = 1; // or single product
-
-// method
-
-if (discounts == true) {
-
-}
+// Ad generator for Google Ads for prodcuts ( for services additional fork should be created)
 
 
 // Base: 
@@ -34,9 +13,50 @@ product: "x",
 
 }
 
-// features 
 
 
+// addional features 
+
+location: "x";
+
+
+
+// triggered components --- 1 or 0
+
+var discounts
+var discountPercent
+var buy1Get2
+var Delivery// fast or free
+var ecoFriendly
+var catalogue // or single product
+
+// array of components for loop (которая выделяет нужное)
+
+// var deferentiate= [
+//     catalogue,
+//     ecoFriendly,
+//     Delivery,
+//     buy1Get2,
+//     discounts,
+// ] 
+
+// loop (because of the fact that results have to defferent in every itteration - loop can not be used)
+
+// for (i=0; i < deferentiate.length; i++) {
+//     if (deferentiate[i] == true)
+//         featureComponents.push(deferentiate[i])
+// }
+
+// method
+
+if (discounts == true) {
+    discounts = discountPercent; // number have to be provide by user
+    featureComponents.push("Up to " + discounts + "% off." );
+}
+
+var featureComponents =[
+
+]
 
 // Making Headline
 
@@ -61,7 +81,7 @@ function builtHeadline() {
 builtHeadline()
 
 
-// Combain Descriptions
+// Combain Descriptions - also checking itriggered componetns and adding themon the fly - need to add other triggers //
 
 function builtDescription(){
 

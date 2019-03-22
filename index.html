@@ -1,17 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Google Ad generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Google Ad generator</h1>
+    <div class="wrapper">
 
-    <div> <h4> Your company name</h4> <form placehoder="conpanyname"> </form></div>
+        <h1 class="title">Google Ad generator</h1>
 
+        <div class="details">
+            <h4> Fill in company details</h4>
+            <form>
+             <div class="columns">
+                <div class=base-info>
+                Company name
+                <input type="text" name="companyName" placeholder="conpanyname">
+                <br><br>Product
+                <input type="text" name="product" placeholder="product">
+                <br><br> Addional keywords
+                <input type="text" name="keywords" placeholder="keywords">
+                <br><br> Targetted Final URL for your future ad
+                <input type="text" name="keywords" placeholder="Final URL ">
+                
+                </div>
+
+                <div class="triggers">
+                    Triggers:
+
+                    <br> Do u have more than 1 products?: <input type=checkbox name="trigger-catalogue">
+                    <br> Can you product be refered as "eco-friendly": <input type=checkbox name="trigger-eco-friendly">
+                    <br> Do you have delivery?: <input type=checkbox name="trigger-delivery">
+                    <br> Is your delivery free of cost? <input type=checkbox name="trigger-free-delivery">
+                    <br> Special Promotions <input type=checkbox name="trigger-discounts">
+                    <!---if yes than choose which one:
+                         Buy one get 1 free
+                         Buy 2 get 1 free
+                         A present with the order
+                         - -->
+
+                </div></div>
+
+            </form>
+        </div>
+
+        <div>
+            <h3 center> Your Adds:</h3>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Ad Group</th>
+                    <th>Headline 1</th>
+                    <th>Headline 2</th>
+                    <th>Headline 3</th>
+                    <th>Description 1</th>
+                    <th>Description 2</th>
+                    <th>Path 1</th>
+                    <th>Path 2</th>
+                    <th>Final URL</th>
+                </tr>
+
+                <tr>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <h3 class="center">How to upload?</h3>
+        <P>Copy the the created adds from table below. You can strate paste it the your Google Ad's Editor (import -- >
+            paste from text)</P>
+        <p> Or if you are using web version - buld upload and follow the instruction. Or you can just simply save adds
+            in Goolge Sheets of Excel Sheet.</p>
+    </div>
+
+
+    </div>
 </body>
 
 <script src="main.js"></script>
