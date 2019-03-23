@@ -27,8 +27,8 @@ var discounts
 var discountPercent
 var buy1Get2
 var Delivery// fast or free
-var ecoFriendly
-var catalogue // or single product
+var ecoFriendly = 1;
+var catalogue = 1;// or single product
 
 // array of components for loop (которая выделяет нужное)
 
@@ -83,27 +83,36 @@ builtHeadline()
 
 // Combain Descriptions - also checking itriggered componetns and adding themon the fly - need to add other triggers //
 
-function builtDescription(){
+function builtDescription() {
 
     var descrOptions = [
 
-    "Best quality " + keyWords.product + " suitable for everyone. Make your order right now!",
-]
+        "Best quality " + keyWords.product + " suitable for everyone. Make your order right now!",
+    ]
 
     if (ecoFriendly == true) {
 
-       descrOptions.push( "Eco-friendly " + keyWords.product + " for you and your family. Order now!" );
+        descrOptions.push("Eco-friendly " + keyWords.product + " for you and your family. Order now!");
     }
 
     if (catalogue == true) {
         descrOptions.push("Full catalogue of " + keyWords.product + " Choose you favorite and order now");
     }
 
+    // for (i = 0; i < descrOptions.length; i++) {
+    //     console.log (descrOptions[i]);
+    // }
+
+    // Selection the needed lines by class
+    var descrImport = document.getElementsByClassName("descr");
+
+    // pushing the needed strings in the table  -- (selecting all empty space in the table by selector and replace it with strings)
     for (i = 0; i < descrOptions.length; i++) {
-        console.log (descrOptions[i]);
+        descrImport[i].innerHTML = descrOptions[i];
     }
 
-   
+
+    console.log(descrImport)
 
 }
 
