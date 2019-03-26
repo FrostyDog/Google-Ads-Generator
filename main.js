@@ -1,17 +1,42 @@
 // Ad generator for Google Ads for prodcuts ( for services additional fork should be created)
 
 
-// Base: 
+var submit = document.getElementById("submit-btn")
 
-var keyWords = {
+submit.addEventListener("click", function (e) {
+    e.defaultPrevented;
 
-companyName: "name",
+    // Capturing user's values when button is pressed
 
-keyword: "x",
+    var captureCompany = document.getElementById("company-name");
+    var captureProduct = document.getElementById("product-name");
+    var captureKeywords = document.getElementById("keywords-name");
+    var captureFinalUrl = document.getElementById("final-url");
 
-product: "x",
+    console.log(captureProduct)
+
+    // Base: 
+
+    keyWords = {
+
+        companyName: captureCompany.value,
+
+        keyword: captureKeywords.value,
+
+        product: captureProduct.value,
+
+        finalUrl: captureFinalUrl.value,
+    }
+
+
+        builtHeadlines();
+        builtDescriptions();
 
 }
+
+)
+
+
 
 
 
@@ -91,7 +116,6 @@ function builtHeadlines() {
 
 }
 
-builtHeadlines();
 
 
 // Combain Descriptions - also checking itriggered componetns and adding themon the fly - need to add other triggers //
@@ -135,5 +159,3 @@ function builtDescriptions() {
 
 
 }
-
-builtDescriptions();
