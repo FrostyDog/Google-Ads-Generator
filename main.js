@@ -1,8 +1,7 @@
 // Ad generator for Google Ads for prodcuts ( for services additional fork should be created)
 
-
+// SUBMIT BUTTON !
 var submit = document.getElementById("submit-btn")
-
 submit.addEventListener("click", function (e) {
     e.defaultPrevented;
 
@@ -13,7 +12,6 @@ submit.addEventListener("click", function (e) {
     var captureKeywords = document.getElementById("keywords-name");
     var captureFinalUrl = document.getElementById("final-url");
 
-    console.log(captureProduct)
 
     // Base: 
 
@@ -28,9 +26,11 @@ submit.addEventListener("click", function (e) {
         finalUrl: captureFinalUrl.value,
     }
 
+
     createTableRow()
     builtHeadlines();
     builtDescriptions();
+    builtPathsAndUrls();
 
 }
 
@@ -42,20 +42,18 @@ location: "x";
 
 // triggered components --- 1 or 0
 
-var discounts
-var discountPercent
-var buy1Get2
-var delivery// fast or free
-var ecoFriendly = 1;
-var catalogue = 1;// or single product
+var discounts = document.getElementById("trigger-discounts").value
+// var discountPercent = document.getElementById("discount-number").value
+var buy1Get2 = 1 
+var delivery = document.getElementById("trigger-delivery").value
+var ecoFriendly = document.getElementById("trigger-eco-friendly").value
+var catalogue = document.getElementById("trigger-catalogue").value
+
 
 
 // method
 
-if (discounts == true) {
-    discounts = discountPercent; // number have to be provide by user
-    featureComponents.push("Up to " + discounts + "% off.");
-}
+
 
 var featureComponents = [
 
@@ -106,26 +104,27 @@ function builtDescriptions() {
         "Quality " + keyWords.product + " for most demanding people. Dont wait and order right now!",
     ]
 
-    if (ecoFriendly == true) {
+    if (ecoFriendly == "on") {
         descrOptions.push("Eco-friendly " + keyWords.product + " for you and your family. Order now!");
     }
 
-    if (catalogue == true) {
+    if (catalogue == "on") {
         descrOptions.push("Full catalogue of " + keyWords.product + " Choose you favorite and order now");
     }
 
-    if (delivery == true) {
+    if (delivery == "on") {
         descrOptions.push("Fast and secure delivery. Make your order and get your " + keyWords.product + " right to your home");
     }
 
-    if (buy1Get2 == true) {
+    if (buy1Get2 == "on") {
         descrOptions.push("Famous buy 1 get 2 " + keyWords.product + " without any additional costs. Hurry up and place an order!");
     }
 
+    // if (discounts == "on") {
+//     discounts = discountPercent; // number have to be provide by user
+//     featureComponents.push("Up to " + discounts + "% off.");
+// }
 
-    // for (i = 0; i < descrOptions.length; i++) {
-    //     console.log (descrOptions[i]);
-    // }
 
     // Selection the needed lines by class
     var descrImport = document.getElementsByClassName("descr");
@@ -140,17 +139,42 @@ function builtDescriptions() {
 
 // createing new line in table that is needed.
 
+function builtPathsAndUrls() {
+
+    var finalUrls = document.getElementsByClassName("final-url");
+
+    for (i = 0; i < numberAdsTake.value; i++ ) {
+    finalUrls[i].textContent = keyWords.finalUrl;
+    }
+
+    var paths1 = document.getElementsByClassName("path1");
+    console.log(paths1)
+
+    for (i = 0; i < numberAds.value; i++ ) {
+    paths1[i].innerHTML = keyWords.product;
+    }
+
+    var paths2 = document.getElementsByClassName("path2");
+
+    for (i = 0; i < numberAds.value; i++ ) {
+    paths2[i].innerHTML = keyWords.companyName;
+    }
+}
+
+var numberAdsTake = document.getElementById("numberAds")
+
 function createTableRow() {
 
 
     //capturing number of ads
-    var numberAdsTake = document.getElementById("numberAds")
+    
     var numberAds = numberAdsTake.value;
-    rowNumber = numberAds -= 2;
-    console.log(numberAds)
 
 
-    for (i=0; i <= (rowNumber); i++) { 
+    var rw = document.getElementsByTagName("tr").length
+    console.log(rw)
+
+    for (rw; rw <= numberAds; rw++) { 
 
     var table = document.getElementById("table");
     var row = table.insertRow(-1);
@@ -163,9 +187,17 @@ function createTableRow() {
     cell7 = row.insertCell(6);
     cell8 = row.insertCell(7);
     cell9 = row.insertCell(8);
-    cell0 = row.insertCell(9);
-    cell11 = row.insertCell(10); }
+    cell10 = row.insertCell(9);
+    cell11 = row.insertCell(10);
 
+    cell7.setAttribute("class","descr")
+    cell8.setAttribute("class","descr")
+    cell9.setAttribute("class","path1")
+    cell10.setAttribute("class","path2")
+    cell11.setAttribute("class","final-url")
+    
+
+    }
 }
 
 
