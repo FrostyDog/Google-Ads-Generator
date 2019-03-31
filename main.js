@@ -28,23 +28,17 @@ submit.addEventListener("click", function (e) {
         finalUrl: captureFinalUrl.value,
     }
 
-
-        builtHeadlines();
-        builtDescriptions();
+    createTableRow()
+    builtHeadlines();
+    builtDescriptions();
 
 }
 
 )
 
-
-
-
-
 // addional features 
 
 location: "x";
-
-
 
 // triggered components --- 1 or 0
 
@@ -55,31 +49,15 @@ var delivery// fast or free
 var ecoFriendly = 1;
 var catalogue = 1;// or single product
 
-// array of components for loop (которая выделяет нужное)
-
-// var deferentiate= [
-//     catalogue,
-//     ecoFriendly,
-//     delivery,
-//     buy1Get2,
-//     discounts,
-// ] 
-
-// loop (because of the fact that results have to defferent in every itteration - loop can not be used)
-
-// for (i=0; i < deferentiate.length; i++) {
-//     if (deferentiate[i] == true)
-//         featureComponents.push(deferentiate[i])
-// }
 
 // method
 
 if (discounts == true) {
     discounts = discountPercent; // number have to be provide by user
-    featureComponents.push("Up to " + discounts + "% off." );
+    featureComponents.push("Up to " + discounts + "% off.");
 }
 
-var featureComponents =[
+var featureComponents = [
 
 ]
 
@@ -100,7 +78,7 @@ function builtHeadlines() {
     ]
 
     for (i = 0; i < hlOptions.length; i++) {
-     console.log (hlOptions[i]);
+        console.log(hlOptions[i]);
     }
 
     // Selection the needed lines by class
@@ -159,3 +137,37 @@ function builtDescriptions() {
 
 
 }
+
+// createing new line in table that is needed.
+
+function createTableRow() {
+
+
+    //capturing number of ads
+    var numberAdsTake = document.getElementById("numberAds")
+    var numberAds = numberAdsTake.value;
+    rowNumber = numberAds -= 2;
+    console.log(numberAds)
+
+
+    for (i=0; i <= (rowNumber); i++) { 
+
+    var table = document.getElementById("table");
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell3 = row.insertCell(2);
+    cell4 = row.insertCell(3);
+    cell5 = row.insertCell(4);
+    cell6 = row.insertCell(5);
+    cell7 = row.insertCell(6);
+    cell8 = row.insertCell(7);
+    cell9 = row.insertCell(8);
+    cell0 = row.insertCell(9);
+    cell11 = row.insertCell(10); }
+
+}
+
+
+
+
