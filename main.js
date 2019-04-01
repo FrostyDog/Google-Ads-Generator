@@ -13,6 +13,8 @@ submit.addEventListener("click", function (e) {
     var captureKeywords = document.getElementById("keywords-name");
     var captureFinalUrl = document.getElementById("final-url");
 
+    locationTarget = document.getElementById("location-info").value; // working - could be connected to the functions below.
+    // Have a connection to description builder and keywords one. 
     //Capturing stance of triggers 
 
     discounts = document.getElementById("trigger-discounts").checked
@@ -22,10 +24,6 @@ submit.addEventListener("click", function (e) {
     ecoFriendly = document.getElementById("trigger-eco-friendly").checked
     catalogue = document.getElementById("trigger-catalogue").checked
     ecoFriendly = document.getElementById("trigger-eco-friendly").checked
-
-    console.log(ecoFriendly)
-
-
 
     // Base: 
 
@@ -101,7 +99,7 @@ function createTableRow() {
 
 // addional features info
 
-location: "x";
+ 
 
 
 // Randomazier for pushing if functions in "built functions"
@@ -185,6 +183,12 @@ function builtDescriptions() {
 
         ]
 
+        console.log(locationTarget)
+        
+        if (locationTarget !== "") {
+            descrOptionsRaw.push("One of the best " + baseInfo.product + " in " + locationTarget + ". Order now.");
+        }
+
         if (ecoFriendly == true) {
             descrOptionsRaw.push("Eco-friendly " + baseInfo.product + " for you and your family. Order now.");
         }
@@ -261,6 +265,12 @@ function addKeywords() {
 
     ]
 
+    if (locationTarget != ""){
+        keywordsOptions.push("Buy " + baseInfo.product + " " + locationTarget)
+        keywordsOptions.push(baseInfo.product + " in " + locationTarget)
+        keywordsOptions.push('"' + baseInfo.product + " in " + locationTarget + '"');
+    }
+
     // function keywordsGenerate (productName) {
     //     for(x = 0; x < numberAds.value; x ++){
     //         keywordsOptions.push() 
@@ -282,7 +292,7 @@ function addKeywords() {
 function addAdGroupCampaign() {
 
     var campaignOptions = [ 
-        "General for" + baseInfo.product,
+        "General for " + baseInfo.product,
         
 
     ]
