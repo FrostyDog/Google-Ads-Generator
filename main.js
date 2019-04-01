@@ -13,6 +13,19 @@ submit.addEventListener("click", function (e) {
     var captureKeywords = document.getElementById("keywords-name");
     var captureFinalUrl = document.getElementById("final-url");
 
+    //triggers 
+
+     discounts = document.getElementById("trigger-discounts").checked
+    // var discountPercent = document.getElementById("discount-number").value
+     buy1Get2 = "no value"
+     delivery = document.getElementById("trigger-delivery").checked
+     ecoFriendly = document.getElementById("trigger-eco-friendly").checked
+     catalogue = document.getElementById("trigger-catalogue").checked
+     ecoFriendly = document.getElementById("trigger-eco-friendly").checked
+
+     console.log(ecoFriendly)
+
+
 
     // Base: 
 
@@ -33,6 +46,7 @@ submit.addEventListener("click", function (e) {
     builtDescriptions();
     builtPathsAndUrls();
 
+
 }
 
 )
@@ -49,7 +63,6 @@ function createTableRow() {
 
 
     var rw = document.getElementsByTagName("tr").length
-    console.log(rw)
 
     for (rw; rw <= numberAds; rw++) {
 
@@ -84,14 +97,6 @@ function createTableRow() {
 
 location: "x";
 
-// triggered components --- 1 or 0
-
-var discounts = document.getElementById("trigger-discounts").value
-// var discountPercent = document.getElementById("discount-number").value
-var buy1Get2 = 1
-var delivery = document.getElementById("trigger-delivery").value
-var ecoFriendly = document.getElementById("trigger-eco-friendly").value
-var catalogue = document.getElementById("trigger-catalogue").value
 
 // Randomazier for pushing if functions in "built functions"
 
@@ -103,7 +108,7 @@ function builtHeadlines() {
     var hl23Options = []
 
     HeadlinesRawCheck()
-    console.log(hl23Options)
+
     function HeadlinesRawCheck() {
 
         h1RawCheck = [
@@ -121,7 +126,7 @@ function builtHeadlines() {
             "Fast Delivery"
         ]
 
-
+        // somehow it repeats a lot of iiteration. 4 but not 1. O_O No answer - but the chances for the randomizer at the end are equal - so can stay.
         for (i = 0; i < h1RawCheck.length; i++) {
             if (h1RawCheck[i].length <= 30) {
                 hl1Options.push(h1RawCheck[i])
@@ -130,7 +135,6 @@ function builtHeadlines() {
         for (x = 0; x < hl23RawCheck.length; x++) {
              if (hl23RawCheck[x].length <= 30) {
                 hl23Options.push(hl23RawCheck[x])
-                console.log(hl23RawCheck[x])
                 }
 
 
@@ -162,6 +166,7 @@ function builtHeadlines() {
 
             var descrOptions = []
             descrRawCheck()
+            console.log(descrOptions)
 
             // Function that checks Raw Descriptions length and if it is okay push it to descrOptions.
             // if statement first push option to raw so the cycle would    
@@ -173,19 +178,19 @@ function builtHeadlines() {
 
                 ]
 
-                if (ecoFriendly == "on") {
+                if (ecoFriendly == true) {
                     descrOptionsRaw.push("Eco-friendly " + keyWords.product + " for you and your family. Order now.");
                 }
 
-                if (catalogue == "on") {
+                if (catalogue == true) {
                     descrOptionsRaw.push("Full catalogue of " + keyWords.product + " Choose you favorite and order now.");
                 }
 
-                if (delivery == "on") {
+                if (delivery == true) {
                     descrOptionsRaw.push("Fast and secure delivery. Make your order and get your " + keyWords.product + " right to your home.");
                 }
 
-                if (buy1Get2 == "on") {
+                if (buy1Get2 == true) {
                     descrOptionsRaw.push("Famous buy 1 get 2 " + keyWords.product + " without any additional costs. Hurry up and place an order!");
                 }
 
@@ -197,7 +202,7 @@ function builtHeadlines() {
 
             }
 
-            // if (discounts == "on") {
+            // if (discounts == "true") {
             //     discounts = discountPercent; // number have to be provide by user
             //     featureComponents.push("Up to " + discounts + "% off.");
             // }
