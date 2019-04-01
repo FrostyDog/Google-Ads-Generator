@@ -13,7 +13,7 @@ submit.addEventListener("click", function (e) {
     var captureKeywords = document.getElementById("keywords-name");
     var captureFinalUrl = document.getElementById("final-url");
 
-    //triggers 
+    //Capturing stance of triggers 
 
     discounts = document.getElementById("trigger-discounts").checked
     // var discountPercent = document.getElementById("discount-number").value
@@ -40,12 +40,14 @@ submit.addEventListener("click", function (e) {
         finalUrl: captureFinalUrl.value,
     }
 
+    // executing main structure functions
 
     createTableRow()
     builtHeadlines();
     builtDescriptions();
     builtPathsAndUrls();
     addKeywords();
+    addAdGroupCampaign();
 
 
 }
@@ -82,6 +84,8 @@ function createTableRow() {
         cell11 = row.insertCell(10);
 
         cell1.setAttribute("class", "keywords")
+        cell2.setAttribute("class", "campaign")
+        cell3.setAttribute("class", "ad-group")
         cell4.setAttribute("class", "hd1")
         cell5.setAttribute("class", "hd")
         cell6.setAttribute("class", "hd")
@@ -255,17 +259,13 @@ function addKeywords() {
         '"' + "Buy " + baseInfo.product + " online" + '"',
         "Buy" + baseInfo.product + "with delivery",
 
-    ] 
-
-
+    ]
 
     // function keywordsGenerate (productName) {
     //     for(x = 0; x < numberAds.value; x ++){
     //         keywordsOptions.push() 
     //     }} 
     // keywordsGenerate(baseInfo.product)
-
-   
 
     var keywordsImport = document.getElementsByClassName("keywords")
 
@@ -277,6 +277,39 @@ function addKeywords() {
     
 
     
+}
+
+function addAdGroupCampaign() {
+
+    var campaignOptions = [ 
+        "General for" + baseInfo.product,
+        
+
+    ]
+
+    // need to make fuction that will create no more than 3 ads withing 1 ad group.
+    // So no more than 3 values will repeate in the adGroupTab
+    var adGroupOptions = [
+        
+    ]
+
+
+    //capturing cells that is needed and pushing content from Options Array to the table
+
+    var campaignImport = document.getElementsByClassName("campaign")
+    var adGroupImport = document.getElementsByClassName("ad-group")
+
+
+    for (i=0; i < numberAds.value; i++) {
+        var randomCamp = Math.floor(Math.random() * campaignOptions.length);
+        campaignImport[i].innerHTML = campaignOptions[randomCamp];
+    } 
+
+    for (i=0; i < numberAds.value; i++) {
+        var randomAdGroup = Math.floor(Math.random() * adGroupOptions.length);
+        adGroupImport[i].innerHTML = adGroupOptions[randomAdGroup];
+    } 
+
 }
 
 
