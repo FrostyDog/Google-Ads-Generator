@@ -15,21 +15,21 @@ submit.addEventListener("click", function (e) {
 
     //triggers 
 
-     discounts = document.getElementById("trigger-discounts").checked
+    discounts = document.getElementById("trigger-discounts").checked
     // var discountPercent = document.getElementById("discount-number").value
-     buy1Get2 = "no value"
-     delivery = document.getElementById("trigger-delivery").checked
-     ecoFriendly = document.getElementById("trigger-eco-friendly").checked
-     catalogue = document.getElementById("trigger-catalogue").checked
-     ecoFriendly = document.getElementById("trigger-eco-friendly").checked
+    buy1Get2 = "no value"
+    delivery = document.getElementById("trigger-delivery").checked
+    ecoFriendly = document.getElementById("trigger-eco-friendly").checked
+    catalogue = document.getElementById("trigger-catalogue").checked
+    ecoFriendly = document.getElementById("trigger-eco-friendly").checked
 
-     console.log(ecoFriendly)
+    console.log(ecoFriendly)
 
 
 
     // Base: 
 
-    keyWords = {
+    baseInfo = {
 
         companyName: captureCompany.value,
 
@@ -45,6 +45,7 @@ submit.addEventListener("click", function (e) {
     builtHeadlines();
     builtDescriptions();
     builtPathsAndUrls();
+    addKeywords();
 
 
 }
@@ -80,6 +81,7 @@ function createTableRow() {
         cell10 = row.insertCell(9);
         cell11 = row.insertCell(10);
 
+        cell1.setAttribute("class", "keywords")
         cell4.setAttribute("class", "hd1")
         cell5.setAttribute("class", "hd")
         cell6.setAttribute("class", "hd")
@@ -112,17 +114,17 @@ function builtHeadlines() {
     function HeadlinesRawCheck() {
 
         h1RawCheck = [
-            "Buy " + keyWords.product + " online",
+            "Buy " + baseInfo.product + " online",
 
-            "Catalogue of " + keyWords.product,
-    
-            "Buy " + keyWords.product + " from " + keyWords.companyName,
+            "Catalogue of " + baseInfo.product,
+
+            "Buy " + baseInfo.product + " from " + baseInfo.companyName,
         ]
 
         hl23RawCheck = [
             "Great discounts!",
             "Don't miss the opportinity!",
-            keyWords.companyName,
+            baseInfo.companyName,
             "Fast Delivery"
         ]
 
@@ -132,14 +134,15 @@ function builtHeadlines() {
                 hl1Options.push(h1RawCheck[i])
             }
 
-        for (x = 0; x < hl23RawCheck.length; x++) {
-             if (hl23RawCheck[x].length <= 30) {
-                hl23Options.push(hl23RawCheck[x])
+            for (x = 0; x < hl23RawCheck.length; x++) {
+                if (hl23RawCheck[x].length <= 30) {
+                    hl23Options.push(hl23RawCheck[x])
                 }
 
 
             }
-        }}
+        }
+    }
 
     // Selection the needed lines by class
     var hl1Import = document.getElementsByClassName("hd1");
@@ -157,92 +160,124 @@ function builtHeadlines() {
     }
 
 
+}
+
+
+// Combain Descriptions - also checking itriggered componetns and adding themon the fly - need to add other triggers //
+
+function builtDescriptions() {
+
+    var descrOptions = []
+    descrRawCheck()
+    console.log(descrOptions)
+
+    // Function that checks Raw Descriptions length and if it is okay push it to descrOptions.
+    // if statement first push option to raw so the cycle would    
+    function descrRawCheck() {
+
+        var descrOptionsRaw = [
+            "Best quality " + baseInfo.product + " suitable for everyone. Make your order right now!",
+            "Quality " + baseInfo.product + " for most demanding people. Dont wait and order right now!",
+
+        ]
+
+        if (ecoFriendly == true) {
+            descrOptionsRaw.push("Eco-friendly " + baseInfo.product + " for you and your family. Order now.");
         }
 
-
-        // Combain Descriptions - also checking itriggered componetns and adding themon the fly - need to add other triggers //
-
-        function builtDescriptions() {
-
-            var descrOptions = []
-            descrRawCheck()
-            console.log(descrOptions)
-
-            // Function that checks Raw Descriptions length and if it is okay push it to descrOptions.
-            // if statement first push option to raw so the cycle would    
-            function descrRawCheck() {
-
-                var descrOptionsRaw = [
-                    "Best quality " + keyWords.product + " suitable for everyone. Make your order right now!",
-                    "Quality " + keyWords.product + " for most demanding people. Dont wait and order right now!",
-
-                ]
-
-                if (ecoFriendly == true) {
-                    descrOptionsRaw.push("Eco-friendly " + keyWords.product + " for you and your family. Order now.");
-                }
-
-                if (catalogue == true) {
-                    descrOptionsRaw.push("Full catalogue of " + keyWords.product + " Choose you favorite and order now.");
-                }
-
-                if (delivery == true) {
-                    descrOptionsRaw.push("Fast and secure delivery. Make your order and get your " + keyWords.product + " right to your home.");
-                }
-
-                if (buy1Get2 == true) {
-                    descrOptionsRaw.push("Famous buy 1 get 2 " + keyWords.product + " without any additional costs. Hurry up and place an order!");
-                }
-
-                for (x = 0; x < descrOptionsRaw.length; x++) {
-                    if (descrOptionsRaw[x].length <= 90) {
-                        descrOptions.push(descrOptionsRaw[x])
-                    }
-                }
-
-            }
-
-            // if (discounts == "true") {
-            //     discounts = discountPercent; // number have to be provide by user
-            //     featureComponents.push("Up to " + discounts + "% off.");
-            // }
-
-
-            // Selection the needed lines by class
-            var descrImport = document.getElementsByClassName("descr");
-
-            // pushing the needed strings in the table  -- (selecting all empty space in the table by selector and replace it with strings)
-            for (i = 0; i < (numberAds.value * 2); i++) {
-                var random = Math.floor(Math.random() * descrOptions.length)
-                descrImport[i].innerHTML = descrOptions[random];
-            }
-
+        if (catalogue == true) {
+            descrOptionsRaw.push("Full catalogue of " + baseInfo.product + " Choose you favorite and order now.");
         }
 
-        // createing new line in table that is needed.
+        if (delivery == true) {
+            descrOptionsRaw.push("Fast and secure delivery. Make your order and get your " + baseInfo.product + " right to your home.");
+        }
 
-        function builtPathsAndUrls() {
+        if (buy1Get2 == true) {
+            descrOptionsRaw.push("Famous buy 1 get 2 " + baseInfo.product + " without any additional costs. Hurry up and place an order!");
+        }
 
-            var finalUrls = document.getElementsByClassName("final-url");
-
-            for (i = 0; i < numberAdsTake.value; i++) {
-                finalUrls[i].textContent = keyWords.finalUrl;
-            }
-
-            var paths1 = document.getElementsByClassName("path1");
-
-            for (i = 0; i < numberAds.value; i++) {
-                paths1[i].innerHTML = keyWords.product;
-            }
-
-            var paths2 = document.getElementsByClassName("path2");
-
-            for (i = 0; i < numberAds.value; i++) {
-                paths2[i].innerHTML = keyWords.companyName;
+        for (x = 0; x < descrOptionsRaw.length; x++) {
+            if (descrOptionsRaw[x].length <= 90) {
+                descrOptions.push(descrOptionsRaw[x])
             }
         }
 
+    }
 
+    // if (discounts == "true") {
+    //     discounts = discountPercent; // number have to be provide by user
+    //     featureComponents.push("Up to " + discounts + "% off.");
+    // }
+
+
+    // Selection the needed lines by class
+    var descrImport = document.getElementsByClassName("descr");
+
+    // pushing the needed strings in the table  -- (selecting all empty space in the table by selector and replace it with strings)
+    for (i = 0; i < (numberAds.value * 2); i++) {
+        var random = Math.floor(Math.random() * descrOptions.length)
+        descrImport[i].innerHTML = descrOptions[random];
+    }
+
+}
+
+// createing new line in table that is needed.
+
+function builtPathsAndUrls() {
+
+    var finalUrls = document.getElementsByClassName("final-url");
+
+    for (i = 0; i < numberAdsTake.value; i++) {
+        finalUrls[i].textContent = baseInfo.finalUrl;
+    }
+
+    var paths1 = document.getElementsByClassName("path1");
+
+    for (i = 0; i < numberAds.value; i++) {
+        paths1[i].innerHTML = baseInfo.product;
+    }
+
+    var paths2 = document.getElementsByClassName("path2");
+
+    for (i = 0; i < numberAds.value; i++) {
+        paths2[i].innerHTML = baseInfo.companyName;
+    }
+}
+
+function addKeywords() {
+    var keywordsOptions = [
+        baseInfo.product,
+        '"' + baseInfo.product + '"',
+        baseInfo.product + " +" + baseInfo.companyName,
+        '"' + 'Buy ' + baseInfo.product + '"',
+        "Buy " + baseInfo.product,
+        '"' + "Buy " + baseInfo.product + " online" + '"',
+        "Buy" + baseInfo.product + "with delivery",
+
+    ] 
+
+
+
+    // function keywordsGenerate (productName) {
+    //     for(x = 0; x < numberAds.value; x ++){
+    //         keywordsOptions.push() 
+    //     }} 
+    // keywordsGenerate(baseInfo.product)
+
+   
+
+    var keywordsImport = document.getElementsByClassName("keywords")
+
+    for (i = 0; i < numberAds.value; i++) {
+        var random = Math.floor(Math.random() * keywordsOptions.length)
+        keywordsImport[i].innerHTML = keywordsOptions[random];
+    }
+
+    
+
+    
+}
 
 
 
