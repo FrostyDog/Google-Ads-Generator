@@ -305,12 +305,13 @@ function addAdGroupCampaign() {
         `Buy ${baseInfo.product} `,
         `${baseInfo.product} + ${baseInfo.keyword}`,
     ]
-
-
+    
     //capturing cells that is needed and pushing content from Options Array to the table
 
     var campaignImport = document.getElementsByClassName("campaign")
     var adGroupImport = document.getElementsByClassName("ad-group")
+
+    
 
 
     for (i=0; i < numberAds.value; i++) {
@@ -324,6 +325,7 @@ function addAdGroupCampaign() {
     } 
 
 }
-
+// -------------------Materials -------------------
+// ------------------------------------------------
 
 
