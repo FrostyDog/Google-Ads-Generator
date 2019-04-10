@@ -261,7 +261,7 @@ function addKeywords() {
         '"' + 'Buy ' + baseInfo.product + '"',
         "Buy " + baseInfo.product,
         '"' + "Buy " + baseInfo.product + " online" + '"',
-        "Buy" + baseInfo.product + "with delivery",
+        `Buy ${baseInfo.product} with delivery`,
 
     ]
 
@@ -292,7 +292,7 @@ function addKeywords() {
 function addAdGroupCampaign() {
 
     var campaignOptions = [ 
-        "General for " + baseInfo.product,
+        "General for " + baseInfo.product + baseInfo.keyword,
         
 
     ]
@@ -300,7 +300,10 @@ function addAdGroupCampaign() {
     // need to make fuction that will create no more than 3 ads withing 1 ad group.
     // So no more than 3 values will repeate in the adGroupTab
     var adGroupOptions = [
-        
+        `${baseInfo.product}`,
+        `${baseInfo.product} + ${locationTarget}`,
+        `Buy ${baseInfo.product} `,
+        `${baseInfo.product} + ${baseInfo.keyword}`,
     ]
 
 
