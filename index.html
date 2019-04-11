@@ -8,62 +8,74 @@
     <title>Google Ad generator</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
+
 </head>
 
 <body>
+    <header>
+        <h1 class="title">Google Ad generator</h1>
+        <h5 class="version"> On-going beta v1.0</h5>
+    </header>
 
     <div class="wrapper">
 
-        <h1 class="title">Google Ad generator</h1>
+
 
         <div class="details">
-            <h4> Fill in company details</h4>
+            <h4> Fill in company details:</h4>
             <form>
-             <div class="columns">
-                <div class=base-info>
+                <div class="columns">
+                    <div class=base-info>
+                        
+                            <p>Company name:</p>
+                            <input type="text" value="Stan's Keys" name="companyName" placeholder="conpanyname" id="company-name">
+                        
 
-                Company name
-                <input type="text" value="Stan's Keys" name="companyName" placeholder="conpanyname" id="company-name">
+                        
+                            <p>Product:</p>
+                            <input type="text" name="product" value="Keys" placeholder="product" id="product-name"
+                                checked="true">
+                        
+                        
+                            <p>Addional keywords:</p>
+                            <input type="text" name="keywords" placeholder="keywords" id="keywords-name">
+                        
+                        
+                            <p>Targetted specific location (if exists):</p>
+                            <input type="text" name="location" value="City X" placeholder="City or Country" id="location-info">
+                            <p>Targetted Final URL for your future ad:</p>
+                            <input type="text" name="keywords" value="www.stanskeys.com" placeholder="Final URL" id="final-url">
+                        
+                    </div>
 
-                <br><br>Product
-                <input type="text" name="product" value="Keys" placeholder="product" id="product-name" checked="true">
+                    <div class="triggers">
+                        Triggers:
 
-                <br><br> Addional keywords
-                <input type="text" name="keywords" placeholder="keywords" id="keywords-name">
-
-                <br><br> Targetted specific location (if exists)
-                <input type="text" name="location" value="City X" placeholder="City or Country" id="location-info">
-
-                <br><br> Targetted Final URL for your future ad
-                <input type="text" name="keywords" value="www.stanskeys.com" placeholder="Final URL" id="final-url">
-                
-                </div>
-                <div>
-                    Number of Ads:
-                    <input type="number" value="10" name="number_of_ads" placeholder="number" id="numberAds">
-                </div>
-
-                <div class="triggers">
-                    Triggers:
-
-                    <br> Do u have more than 1 products?: <input type=checkbox name="trigger-catalogue" id="trigger-catalogue">
-                    <br> Can you product be refered as "eco-friendly": <input type=checkbox name="trigger-eco-friendly" id="trigger-eco-friendly">
-                    <br> Do you have delivery?: <input type=checkbox name="trigger-delivery" id="trigger-delivery">
-                    <br> Is your delivery free of cost? <input type=checkbox name="trigger-free-delivery" id="trigger-free-delivery">
-                    <br> Special Promotions <input type=checkbox name="trigger-discounts" id="trigger-discounts">
-                    <!---if yes than choose which one:
+                        <br> Do u have more than 1 products?: <input type=checkbox name="trigger-catalogue" id="trigger-catalogue">
+                        <br> Can you product be refered as "eco-friendly": <input type=checkbox name="trigger-eco-friendly"
+                            id="trigger-eco-friendly">
+                        <br> Do you have delivery?: <input type=checkbox name="trigger-delivery" id="trigger-delivery">
+                        <br> Is your delivery free of cost? <input type=checkbox name="trigger-free-delivery" id="trigger-free-delivery">
+                        <br> Special Promotions <input type=checkbox name="trigger-discounts" id="trigger-discounts">
+                        <!---if yes than choose which one:
                          Buy one get 1 free
                          Buy 2 get 1 free
                          A present with the order
                          - -->
 
-                </div></div>
+                    </div>
+                </div>
 
             </form>
         </div>
 
-        <div><button type="submit" id="submit-btn">Submit</button></div>
+        <div class="ads-number">
+                <h4>Number of Ads:</h4>
+                <input type="number" value="10" name="number_of_ads" placeholder="number" id="numberAds">
+            </div>
+        <div class="submit-btn"><button type="submit" id="submit-btn">Generate</button></div>
+         
+
 
         <div>
             <h3 center> Your Adds:</h3>
@@ -100,18 +112,18 @@
                 </tr>
 
                 <tr>
-                        <td class="keywords"> </td>
-                        <td class="campaign"> </td>
-                        <td class="ad-group"> </td>
-                        <td class="hd1"> </td>
-                        <td class="hd"> </td>
-                        <td class="hd"> </td>
-                        <td class="descr"> </td>
-                        <td class="descr"> </td>
-                        <td class="path1"> </td>
-                        <td class="path2"> </td>
-                        <td class="final-url"> </td>
-                    </tr>
+                    <td class="keywords"> </td>
+                    <td class="campaign"> </td>
+                    <td class="ad-group"> </td>
+                    <td class="hd1"> </td>
+                    <td class="hd"> </td>
+                    <td class="hd"> </td>
+                    <td class="descr"> </td>
+                    <td class="descr"> </td>
+                    <td class="path1"> </td>
+                    <td class="path2"> </td>
+                    <td class="final-url"> </td>
+                </tr>
 
             </table>
         </div>
@@ -125,19 +137,25 @@
 
         <section>
             <h3 class="center"> Why do you need "Keywords" column?</h3>
-            <p>In the "Keywords" column - you would get a different combinations of the keywords. So you would be able to see which of your ads perforoming better.
-                <br><br> This is crucial for every Google Ads capmaing. Testing and constanly imporving you campaing - is the key to your successes.
-                <br><br> You would see the different combinations of your relevant keywords and matches (phrase, exact, broad). 
-                <br><br> Test - explore - imporve - profit! 
-               <br> <br>  In the future a nice blog post could be made for this.</p>
+            <p>In the "Keywords" column - you would get a different combinations of the keywords. So you would be able
+                to see which of your ads perforoming better.
+                <br><br> This is crucial for every Google Ads capmaing. Testing and constanly imporving you campaing -
+                is the key to your successes.
+                <br><br> You would see the different combinations of your relevant keywords and matches (phrase, exact,
+                broad).
+                <br><br> Test - explore - imporve - profit!
+                <br> <br> In the future a nice blog post could be made for this.</p>
         </section>
     </div>
-
 
     </div>
 </body>
 
 <script src="main.js"></script>
+<script src="styling-script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js"></script> -->
+
 
 </html>

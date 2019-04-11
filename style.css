@@ -10,22 +10,77 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    
+    background-size: cover;   
 }
 
 .wrapper {
     margin: 0 auto;
     /* max-width: 1080px; */
     max-width: 90%;
-    background: rgb(255, 255, 255);
     padding: 20px;
+    background: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
+}
+
+header{
+ /* background: rgb(214, 216, 125); */
+ margin: 0 auto;
+ /* max-width: 1080px; */
+ max-width: 90%;
+ padding: 0 20px;
+}
+
+.title {
+    margin-top: 20px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.version{
+    margin: 0;
+    margin-top: 5px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 h1 {
     margin-top: 0px;
     padding: 21px;
+}
+
+
+
+.base-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.base-info input {
+    display:flex;
+    flex-grow: 2;
+    padding: 4px;
+}
+
+.base-info p {
+    display:flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin: 10px;
+    margin-right: 2px;
+
+}
+
+input {
+    border: 2px rgb(233, 225, 215) solid;
+    border-radius: 2px;
+    font-size: 1.0em;
+    text-align: center;
 }
 
 .center {
@@ -36,15 +91,54 @@ h1 {
 .columns {
     display: flex;
     flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+
+}
+
+
+.ads-number {
+    display: flex;
+    flex-direction: row;
+    flex: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .triggers {
     margin: 20px;
 }
 
+.submit-btn {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#submit-btn {
+    background: #3498db;
+    min-width: 100px;
+    min-height: 50px;
+    padding: 8px 16px;
+    border-radius: 3px;
+    text-align: center;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFF;
+    user-select: none;
+}
+
+#submit-btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 table, td {
     border: 2px grey solid;
     border-collapse: collapse;
+    padding: 2.5px;
 }
 
 th {
