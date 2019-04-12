@@ -85,8 +85,8 @@ function createTableRow() {
         cell2.setAttribute("class", "campaign")
         cell3.setAttribute("class", "ad-group")
         cell4.setAttribute("class", "hd1")
-        cell5.setAttribute("class", "hd")
-        cell6.setAttribute("class", "hd")
+        cell5.setAttribute("class", "hd2")
+        cell6.setAttribute("class", "hd3")
         cell7.setAttribute("class", "descr")
         cell8.setAttribute("class", "descr")
         cell9.setAttribute("class", "path1")
@@ -99,7 +99,7 @@ function createTableRow() {
 
 // addional features info
 
- 
+
 
 
 // Randomazier for pushing if functions in "built functions"
@@ -108,26 +108,38 @@ function createTableRow() {
 function builtHeadlines() {
     // First and the most important one
     var hl1Options = []
-    // rest of the Hedlines
-    var hl23Options = []
+    // Second Headline
+    var hl2Options = []
+    // Third headline
+    var hl3Options = []
 
     HeadlinesRawCheck()
+
+    // Checking character limits
 
     function HeadlinesRawCheck() {
 
         h1RawCheck = [
             "Buy " + baseInfo.product + " online",
-
             "Catalogue of " + baseInfo.product,
-
             "Buy " + baseInfo.product + " from " + baseInfo.companyName,
+            `${baseInfo.product} in ${locationTarget}`,
+
         ]
 
-        hl23RawCheck = [
-            "Great discounts!",
-            "Don't miss the opportinity!",
-            baseInfo.companyName,
-            "Fast Delivery"
+        hl2RawCheck = [
+            `Limited Special Offer`,
+            `Online-shop ${baseInfo.companyName}`,
+            `Great Special Offer`,
+
+        ]
+
+        hl3RawCheck = [
+            `${baseInfo.companyName}`,
+            "Great Discounts!",
+            "Don't Miss the Opportinity!",
+            "Fast Delivery",
+            `Order now`,
         ]
 
         // somehow it repeats a lot of iiteration. 4 but not 1. O_O No answer - but the chances for the randomizer at the end are equal - so can stay.
@@ -135,20 +147,27 @@ function builtHeadlines() {
             if (h1RawCheck[i].length <= 30) {
                 hl1Options.push(h1RawCheck[i])
             }
+        }
 
-            for (x = 0; x < hl23RawCheck.length; x++) {
-                if (hl23RawCheck[x].length <= 30) {
-                    hl23Options.push(hl23RawCheck[x])
-                }
-
-
+        for (x = 0; x < hl2RawCheck.length; x++) {
+            if (hl2RawCheck[x].length <= 30) {
+                hl2Options.push(hl2RawCheck[x])
             }
         }
+
+        for (y = 0; y < hl3RawCheck.length; y++) {
+            if (hl3RawCheck[y].length <= 30) {
+                hl3Options.push(hl3RawCheck[y])
+            }
+        }
+
     }
 
     // Selection the needed lines by class
     var hl1Import = document.getElementsByClassName("hd1");
-    var hl23Import = document.getElementsByClassName("hd");
+    var hl2Import = document.getElementsByClassName("hd2");
+    console.log(hl2Import)
+    var hl3Import = document.getElementsByClassName("hd3");
 
     // pushing the needed strings in the table  -- (selecting all empty space in the table by selector and replace it with strings)
     for (i = 0; i < (numberAds.value); i++) {
@@ -156,10 +175,16 @@ function builtHeadlines() {
         hl1Import[i].innerHTML = hl1Options[random];
     }
 
-    for (i = 0; i < (numberAds.value * 2); i++) {
-        var random12 = Math.floor(Math.random() * hl23Options.length)
-        hl23Import[i].innerHTML = hl23Options[random12];
+    for (i = 0; i < (numberAds.value); i++) {
+        var random2 = Math.floor(Math.random() * hl2Options.length)
+        hl2Import[i].innerHTML = hl2Options[random2];
     }
+
+    for (i = 0; i < (numberAds.value); i++) {
+        var random3 = Math.floor(Math.random() * hl3Options.length)
+        hl3Import[i].innerHTML = hl3Options[random3];
+    }
+
 
 
 }
@@ -184,7 +209,7 @@ function builtDescriptions() {
         ]
 
         console.log(locationTarget)
-        
+
         if (locationTarget !== "") {
             descrOptionsRaw.push("One of the best " + baseInfo.product + " in " + locationTarget + ". Order now.");
         }
@@ -265,7 +290,7 @@ function addKeywords() {
 
     ]
 
-    if (locationTarget != ""){
+    if (locationTarget != "") {
         keywordsOptions.push("Buy " + baseInfo.product + " " + locationTarget)
         keywordsOptions.push(baseInfo.product + " in " + locationTarget)
         keywordsOptions.push('"' + baseInfo.product + " in " + locationTarget + '"');
@@ -284,16 +309,16 @@ function addKeywords() {
         keywordsImport[i].innerHTML = keywordsOptions[random];
     }
 
-    
 
-    
+
+
 }
 
 function addAdGroupCampaign() {
 
-    var campaignOptions = [ 
+    var campaignOptions = [
         "General for " + baseInfo.product + baseInfo.keyword,
-        
+
 
     ]
 
@@ -305,27 +330,26 @@ function addAdGroupCampaign() {
         `Buy ${baseInfo.product} `,
         `${baseInfo.product} + ${baseInfo.keyword}`,
     ]
-    
+
+
     //capturing cells that is needed and pushing content from Options Array to the table
 
     var campaignImport = document.getElementsByClassName("campaign")
     var adGroupImport = document.getElementsByClassName("ad-group")
 
-    
 
-
-    for (i=0; i < numberAds.value; i++) {
+    for (i = 0; i < numberAds.value; i++) {
         var randomCamp = Math.floor(Math.random() * campaignOptions.length);
         campaignImport[i].innerHTML = campaignOptions[randomCamp];
-    } 
+    }
 
-    for (i=0; i < numberAds.value; i++) {
+    for (i = 0; i < numberAds.value; i++) {
+
         var randomAdGroup = Math.floor(Math.random() * adGroupOptions.length);
         adGroupImport[i].innerHTML = adGroupOptions[randomAdGroup];
-    } 
+    }
 
 }
-// -------------------Materials -------------------
-// ------------------------------------------------
+
 
 
