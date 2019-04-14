@@ -64,10 +64,20 @@ function createTableRow() {
 
 
     var rw = document.getElementsByTagName("tr").length
+    // IMPORTANT!!! rw = consist of 1 HEAD ROW + Ad rows. So physically we have (rw - 1) ad row.
+    var table = document.getElementById("table");
 
+    // Reseating number of Ads current
+
+    for (rw; rw > numberAds; rw--) {
+        table.deleteRow(-1);
+    }
+
+        // Controlling rw number with "++" and "--"
+
+    // Because of "<=" sign, when we reach 10 rw (9 ad rows) and number of Ads = 10, 10 = 10 which is true, so we add 1 more rw and make physical 10 rows).
     for (rw; rw <= numberAds; rw++) {
 
-        var table = document.getElementById("table");
         var row = table.insertRow(-1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
