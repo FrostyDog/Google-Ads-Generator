@@ -130,19 +130,21 @@ function builtHeadlines() {
     function HeadlinesRawCheck() {
 
         h1RawCheck = [
-            "Buy " + baseInfo.product + " online",
+            "Buy " + baseInfo.product + " Online",
             "Catalogue of " + baseInfo.product,
-            "Buy " + baseInfo.product + " from " + baseInfo.companyName,
+            "Buy " + baseInfo.product + " From " + baseInfo.companyName,
             `${baseInfo.product} in ${locationTarget}`,
             `Special Prices on ${baseInfo.product}`,
+            `Looking For ${baseInfo.product}`,
+
 
         ]
 
         hl2RawCheck = [
             `Limited Special Offer`,
-            `Online-shop ${baseInfo.companyName}`,
+            `Online-Shop ${baseInfo.companyName}`,
             `Great Special Offer`,
-            `We are not on Comparison Sites`,
+            `We Are Not on Comparison Sites`,
             `Official ${baseInfo.companyName}`,
 
         ]
