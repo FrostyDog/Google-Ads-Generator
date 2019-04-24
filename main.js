@@ -134,6 +134,7 @@ function builtHeadlines() {
             "Catalogue of " + baseInfo.product,
             "Buy " + baseInfo.product + " from " + baseInfo.companyName,
             `${baseInfo.product} in ${locationTarget}`,
+            `Special Prices on ${baseInfo.product}`,
 
         ]
 
@@ -141,6 +142,8 @@ function builtHeadlines() {
             `Limited Special Offer`,
             `Online-shop ${baseInfo.companyName}`,
             `Great Special Offer`,
+            `We are not on Comparison Sites`,
+            `Official ${baseInfo.companyName}`,
 
         ]
 
@@ -148,8 +151,8 @@ function builtHeadlines() {
             `${baseInfo.companyName}`,
             "Great Discounts!",
             "Don't Miss the Opportinity!",
-            "Fast Delivery",
-            `Order now`,
+            `Visite ${baseInfo.finalUrl}`
+
         ]
 
         // somehow it repeats a lot of iiteration. 4 but not 1. O_O No answer - but the chances for the randomizer at the end are equal - so can stay.
@@ -215,6 +218,8 @@ function builtDescriptions() {
         var descrOptionsRaw = [
             "Best quality " + baseInfo.product + " suitable for everyone. Make your order right now!",
             "Quality " + baseInfo.product + " for most demanding people. Dont wait and order right now!",
+            `Best ${baseInfo.product} in ${locationTarget}. Order the perfect  `,
+            `Dont miss the incredible opportunity and buy ${baseInfo.product} with fast delivery`,
 
         ]
 
@@ -339,6 +344,8 @@ function addAdGroupCampaign() {
         `${baseInfo.product} + ${locationTarget}`,
         `Buy ${baseInfo.product} `,
         `${baseInfo.product} + ${baseInfo.keyword}`,
+        `Buy ${baseInfo.product} online`,
+        `Buy ${baseInfo.product} + online`,
     ]
 
 
