@@ -23,7 +23,6 @@ submit.addEventListener("click", function (e) {
     delivery = document.getElementById("trigger-delivery").checked
     ecoFriendly = document.getElementById("trigger-eco-friendly").checked
     catalogue = document.getElementById("trigger-catalogue").checked
-    ecoFriendly = document.getElementById("trigger-eco-friendly").checked
 
     // Base: 
 
@@ -220,7 +219,7 @@ function builtDescriptions() {
         var descrOptionsRaw = [
             "Best quality " + baseInfo.product + " suitable for everyone. Make your order right now!",
             "Quality " + baseInfo.product + " for most demanding people. Dont wait and order right now!",
-            `Best ${baseInfo.product} in ${locationTarget}. Order the perfect  `,
+            `Best ${baseInfo.product} in ${locationTarget}. Order now and enjoy! `,
             `Dont miss the incredible opportunity and buy ${baseInfo.product} with fast delivery`,
 
         ]
@@ -228,15 +227,15 @@ function builtDescriptions() {
         console.log(locationTarget)
 
         if (locationTarget !== "") {
-            descrOptionsRaw.push("One of the best " + baseInfo.product + " in " + locationTarget + ". Order now.");
+            descrOptionsRaw.push("One of the best " + baseInfo.product + " in " + locationTarget + ". Order now!");
         }
 
         if (ecoFriendly == true) {
-            descrOptionsRaw.push("Eco-friendly " + baseInfo.product + " for you and your family. Order now.");
+            descrOptionsRaw.push("Eco-friendly " + baseInfo.product + " for you and your family. Order now!");
         }
 
         if (catalogue == true) {
-            descrOptionsRaw.push("Full catalogue of " + baseInfo.product + " Choose you favorite and order now.");
+            descrOptionsRaw.push("Full catalogue of " + baseInfo.product + " Choose you favorite and order now!");
         }
 
         if (delivery == true) {
@@ -265,9 +264,16 @@ function builtDescriptions() {
     var descrImport = document.getElementsByClassName("descr");
 
     // pushing the needed strings in the table  -- (selecting all empty space in the table by selector and replace it with strings)
-    for (i = 0; i < (numberAds.value * 2); i++) {
+    for (i = 0; i < (numberAds.value * 2); i+=2) {
+        let x = i + 1
+        let randomx = Math.floor(Math.random() * descrOptions.length)
         var random = Math.floor(Math.random() * descrOptions.length)
         descrImport[i].innerHTML = descrOptions[random];
+        if (random != randomx){
+        descrImport[x].innerHTML = descrOptions[randomx];}
+        else {
+        descrImport[x].innerHTML = descrOptions[randomx+1]
+        }
     }
 
 }
