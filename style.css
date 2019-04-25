@@ -13,6 +13,24 @@ body {
     background-size: cover;   
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+}
+
+footer a{
+    color:rgb(8, 6, 8);
+    text-decoration: none;
+    text-transform: none;
+  }
+
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
 .wrapper {
     margin: 0 auto;
     /* max-width: 1080px; */
@@ -20,6 +38,20 @@ body {
     padding: 20px;
     background: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    background: rgb(235, 207, 171);
+    color:rgb(8, 6, 8);
+    max-height: 100px;
+    margin: 0 auto;
+    /* max-width: 1080px; */
+    max-width: 90%;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
 }
 
 header{
@@ -145,3 +177,4 @@ th {
     border: 3px grey solid;
     padding: 5px;
 }
+
