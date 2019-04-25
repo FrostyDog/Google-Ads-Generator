@@ -11,6 +11,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;   
+    transition: all 0.5s ease;
 }
 
 a {
@@ -45,6 +46,7 @@ footer {
     align-content: center;
     justify-content: space-around;
     background: rgb(235, 207, 171);
+    box-shadow: 0 8px 6px -6px black;
     color:rgb(8, 6, 8);
     max-height: 100px;
     margin: 0 auto;
@@ -54,16 +56,50 @@ footer {
     padding: 20px;
 }
 
-header{
- /* background: rgb(214, 216, 125); */
+header {
+    /* background: rgb(235, 207, 171); */
  margin: 0 auto;
  /* max-width: 1080px; */
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
  max-width: 90%;
  padding: 0 20px;
+ /* box-shadow: 0 8px 6px -6px black; */
 }
 
+nav{
+    display:flex;
+    justify-content: space-between;
+}
+
+nav div {
+    background-color: rgba(10, 10, 10, 0.982);
+    padding: 15px 20px;
+    margin: 10px;
+}
+nav a {
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+nav div:hover{
+    background-color: rgba(10, 10, 10, 0.582);
+    cursor: pointer;
+    }
+
+nav a:hover{
+    text-decoration: none;
+    }
+
+
 .title {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-top: 5px;
     color:white;
     display: flex;
     justify-content: center;
