@@ -144,15 +144,15 @@ function builtHeadlines() {
             `Online-Shop ${baseInfo.companyName}`,
             `Great Special Offer`,
             `We Are Not on Comparison Sites`,
-            `Official ${baseInfo.companyName}`,
+            `Official ${baseInfo.companyName} website`,
 
         ]
 
         hl3RawCheck = [
             `${baseInfo.companyName}`,
-            "Great Discounts!",
-            "Don't Miss the Opportinity!",
-            `Visite ${baseInfo.finalUrl}`
+            "Great Discounts",
+            "Don't Miss the Opportinity",
+            `Visit ${baseInfo.finalUrl}`
 
         ]
 
@@ -218,9 +218,9 @@ function builtDescriptions() {
 
         var descrOptionsRaw = [
             "Best quality " + baseInfo.product + " suitable for everyone. Make your order right now!",
-            "Quality " + baseInfo.product + " for most demanding people. Dont wait and order right now!",
+            "Quality " + baseInfo.product + " for most demanding people. Dont wait and order right now.",
             `Best ${baseInfo.product} in ${locationTarget}. Order now and enjoy! `,
-            `Dont miss the incredible opportunity and buy ${baseInfo.product} with fast delivery`,
+            `Dont miss the incredible opportunity and buy ${baseInfo.product} with fast delivery.`,
 
         ]
 
@@ -272,7 +272,7 @@ function builtDescriptions() {
         if (random != randomx){
         descrImport[x].innerHTML = descrOptions[randomx];}
         else {
-        descrImport[x].innerHTML = descrOptions[randomx+1]
+        descrImport[x].innerHTML = descrOptions[randomx+1] // if th element is last one - than x + 1 woulod return undefined. Nee to make (if randomX last one - random - 1)
         }
     }
 
@@ -340,7 +340,7 @@ function addKeywords() {
 function addAdGroupCampaign() {
 
     var campaignOptions = [
-        "General for " + baseInfo.product + baseInfo.keyword,
+        "General for " + baseInfo.product + " " + baseInfo.keyword,
 
 
     ]
