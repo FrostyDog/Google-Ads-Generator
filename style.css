@@ -45,15 +45,19 @@ footer {
     display: flex;
     align-content: center;
     justify-content: space-around;
-    background: rgb(235, 207, 171);
+    background: rgba(10, 10, 10, 0.982);
     box-shadow: 0 8px 6px -6px black;
-    color:rgb(8, 6, 8);
+    color:white;
     max-height: 100px;
     margin: 0 auto;
     /* max-width: 1080px; */
     max-width: 90%;
     font-family: 'Roboto', sans-serif;
     padding: 20px;
+}
+
+footer a {
+    color: white;
 }
 
 header {
@@ -78,7 +82,7 @@ nav div {
     padding: 15px 20px;
     margin: 10px;
 }
-nav a {
+nav a{
       color: white;
       font-size: 25px;
       font-weight: bold;
