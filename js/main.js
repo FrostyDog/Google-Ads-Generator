@@ -227,7 +227,7 @@ function builtDescriptions() {
             `Having Troubles Finding Great ${baseInfo.product}? We Got You Covered.`,
             `Searching for Ages To Buy New ${baseInfo.product}? You Have Found it!`,
             `It's Okay To Search For Something New. The New Is Here.`,
-            `Time to Order ${baseInfo.product} Has Come. Check Out ${baseInfo.companyName}`,
+            `Time to Order ${baseInfo.product} Has Come. Check Out ${baseInfo.companyName}.`,
             `We Know It is Hard To Find Perfect ${baseInfo.product}. Luckily, You Have Us.`,
             `Follow Your Dream And Get Your ${baseInfo.product} From The Best Ones`,
             
