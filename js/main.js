@@ -221,6 +221,10 @@ function builtDescriptions() {
             "Quality " + baseInfo.product + " for most demanding people. Dont wait and order right now.",
             `Best ${baseInfo.product} in ${locationTarget}. Order now and enjoy! `,
             `Dont miss the incredible opportunity and buy ${baseInfo.product} with fast delivery.`,
+            `Fast shipping right to your home. Only Secure Payments`,
+            `Delivering Only Best Experience and Best Quality ${baseInfo.product}.`,
+            `Ready-To-Help Support and Fast Shipping.`,
+            
 
         ]
 
@@ -234,8 +238,15 @@ function builtDescriptions() {
             descrOptionsRaw.push("Eco-friendly " + baseInfo.product + " for you and your family. Order now!");
         }
 
+        if (discounts == true) {
+            descrOptionsRaw.push(`Check Out Our Limeted Special. Don't Wait and Order Now!`);
+            descrOptionsRaw.push(`Big Discounts on Your Favorite ${baseInfo.product}. Fast and Secure Delivery`);
+            descrOptionsRaw.push(`Gigantic Sales! Buy Now and Save Your Money`);
+        }
+
         if (catalogue == true) {
             descrOptionsRaw.push("Full catalogue of " + baseInfo.product + " Choose you favorite and order now!");
+            descrOptionsRaw.push(`Be Wise and Choose the Best. Check Out Our Catalogue.`);
         }
 
         if (delivery == true) {
@@ -271,8 +282,10 @@ function builtDescriptions() {
         descrImport[i].innerHTML = descrOptions[random];
         if (random != randomx){
         descrImport[x].innerHTML = descrOptions[randomx];}
-        else {
-        descrImport[x].innerHTML = descrOptions[randomx+1] // if th element is last one - than x + 1 woulod return undefined. Nee to make (if randomX last one - random - 1)
+        else if (randomx == descrOptions.length && (randomx-1 != random)) {
+        descrImport[x].innerHTML = descrOptions[randomx-1]
+        } else {
+            descrImport[x].innerHTML = descrOptions[randomx-2]
         }
     }
 
@@ -340,7 +353,7 @@ function addKeywords() {
 function addAdGroupCampaign() {
 
     var campaignOptions = [
-        "General for " + baseInfo.product + " " + baseInfo.keyword,
+        "General for " + baseInfo.product + " + " + baseInfo.keyword,
 
 
     ]

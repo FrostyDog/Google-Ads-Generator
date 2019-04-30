@@ -164,6 +164,10 @@ input {
     justify-content: center;
 }
 
+.details h5.center {
+    margin-top: 5px;
+}
+
 .columns {
     display: flex;
     flex-direction: row;
@@ -220,6 +224,20 @@ table, td {
 th {
     border: 3px grey solid;
     padding: 5px;
+    background: rgb(203, 224, 197);
+}
+
+
+td:nth-child(1) {
+    background: rgb(229, 229, 170);
+}
+
+td:nth-child(2),td:nth-child(3)  {
+    background: rgb(156, 230, 146);
+}
+
+td:nth-child(2),td:nth-child(3)  {
+    background: rgb(156, 230, 146);
 }
 
 input[type='checkbox'] {
