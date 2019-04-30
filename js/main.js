@@ -152,7 +152,7 @@ function builtHeadlines() {
             `${baseInfo.companyName}`,
             "Great Discounts",
             "Don't Miss the Opportinity",
-            `Visit ${baseInfo.finalUrl}`
+            `Visit ${baseInfo.companyName}`,
 
         ]
 
@@ -279,13 +279,18 @@ function builtDescriptions() {
         let x = i + 1
         let randomx = Math.floor(Math.random() * descrOptions.length)
         var random = Math.floor(Math.random() * descrOptions.length)
+        let trueRandomX = randomx - 1
         descrImport[i].innerHTML = descrOptions[random];
         if (random != randomx){
-        descrImport[x].innerHTML = descrOptions[randomx];}
-        else if (randomx == descrOptions.length && (randomx-1 != random)) {
-        descrImport[x].innerHTML = descrOptions[randomx-1]
+        descrImport[x].innerHTML = descrOptions[randomx];
+        console.log (randomx)}
+        else if (randomx > 2  && trueRandomX !== random) {
+        descrImport[x].innerHTML = descrOptions[trueRandomX]
+        console.log (`${trueRandomX} workin`)
         } else {
-            descrImport[x].innerHTML = descrOptions[randomx-2]
+            let betterTrueRandomX = randomx + 1
+            descrImport[x].innerHTML = descrOptions[betterTrueRandomX]
+            console.log (`${betterTrueRandomX} better workin`)
         }
     }
 
