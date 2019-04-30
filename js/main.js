@@ -217,13 +217,19 @@ function builtDescriptions() {
     function descrRawCheck() {
 
         var descrOptionsRaw = [
-            "Best quality " + baseInfo.product + " suitable for everyone. Make your order right now!",
-            "Quality " + baseInfo.product + " for most demanding people. Dont wait and order right now.",
-            `Best ${baseInfo.product} in ${locationTarget}. Order now and enjoy! `,
-            `Dont miss the incredible opportunity and buy ${baseInfo.product} with fast delivery.`,
-            `Fast shipping right to your home. Only Secure Payments`,
+            "Best Quality " + baseInfo.product + " Suitable for Everyone. Make Your Order Right Now!",
+            "Quality " + baseInfo.product + " for Most Demanding People. Dont Wait and Order Right Now.",
+            `Best ${baseInfo.product} in ${locationTarget}. Order Now and Enjoy! `,
+            `Dont Miss an Incredible Opportunity. Buy ${baseInfo.product} Now!`,
+            `Fast Shipping Right to Your Home. Only Secure Payments`,
             `Delivering Only Best Experience and Best Quality ${baseInfo.product}.`,
             `Ready-To-Help Support and Fast Shipping.`,
+            `Having Troubles Finding Great ${baseInfo.product}? We Got You Covered.`,
+            `Searching for Ages To Buy New ${baseInfo.product}? You Have Found it!`,
+            `It's Okay To Search For Something New. The New Is Here.`,
+            `Time to Order ${baseInfo.product} Has Come. Check Out ${baseInfo.companyName}`,
+            `We Know It is Hard To Find Perfect ${baseInfo.product}. Luckily, You Have Us.`,
+            `Follow Your Dream And Get Your ${baseInfo.product} From The Best Ones`,
             
 
         ]
