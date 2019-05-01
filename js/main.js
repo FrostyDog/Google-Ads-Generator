@@ -144,7 +144,8 @@ function builtHeadlines() {
             `Online-Shop ${baseInfo.companyName}`,
             `Great Special Offer`,
             `We Are Not on Comparison Sites`,
-            `Official ${baseInfo.companyName} website`,
+            `You Need That ${baseInfo.product}`,
+            
 
         ]
 
@@ -152,7 +153,10 @@ function builtHeadlines() {
             `${baseInfo.companyName}`,
             "Great Discounts",
             "Don't Miss the Opportinity",
-            `Visit ${baseInfo.companyName}`,
+            `Great Prices`,
+            `Get It Now`,
+            `You Wouldn't Find Better`,
+
 
         ]
 
@@ -229,7 +233,10 @@ function builtDescriptions() {
             `It's Okay To Search For Something New. The New Is Here.`,
             `Time to Order ${baseInfo.product} Has Come. Check Out ${baseInfo.companyName}.`,
             `We Know It is Hard To Find Perfect ${baseInfo.product}. Luckily, You Have Us.`,
-            `Follow Your Dream And Get Your ${baseInfo.product} From The Best Ones`,
+            `Follow Your Dream And Get Your ${baseInfo.product} From The Best Ones.`,
+            `We All Need a ${baseInfo.product}. So Why Not Get One Now?`,
+            `Stay Alert! You Can Miss Great Deal And Discount.`,
+            `Everyone Want To Have These ${baseInfo.product}. But You Can have It!`,
             
 
         ]
@@ -253,6 +260,7 @@ function builtDescriptions() {
         if (catalogue == true) {
             descrOptionsRaw.push("Full catalogue of " + baseInfo.product + " Choose you favorite and order now!");
             descrOptionsRaw.push(`Be Wise and Choose the Best. Check Out Our Catalogue.`);
+            descrOptionsRaw.push(`You Would Find a Wide Range of ${baseInfo.product}. Take a Look!`);
         }
 
         if (delivery == true) {

@@ -130,7 +130,7 @@
   [ Contact ]*/
   
   .container-contact100 {
-    width: 100%;  
+    width: 100%;
     min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -303,7 +303,7 @@
   }
   
   .contact100-form-btn:hover:before {
-    background-color: #403866;
+    background-color: #d9d8dd;
     width: calc(100% + 20px);
   }
   
