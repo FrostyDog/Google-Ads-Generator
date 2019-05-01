@@ -130,7 +130,7 @@ function builtHeadlines() {
 
         h1RawCheck = [
             "Buy " + baseInfo.product + " Online",
-            "Catalogue of " + baseInfo.product,
+            "Catalog of " + baseInfo.product,
             "Buy " + baseInfo.product + " From " + baseInfo.companyName,
             `${baseInfo.product} in ${locationTarget}`,
             `Special Prices on ${baseInfo.product}`,
@@ -152,7 +152,7 @@ function builtHeadlines() {
         hl3RawCheck = [
             `${baseInfo.companyName}`,
             "Great Discounts",
-            "Don't Miss the Opportinity",
+            "Don't Miss the Opportunity",
             `Great Prices`,
             `Get It Now`,
             `You Wouldn't Find Better`,
@@ -222,9 +222,9 @@ function builtDescriptions() {
 
         var descrOptionsRaw = [
             "Best Quality " + baseInfo.product + " Suitable for Everyone. Make Your Order Right Now!",
-            "Quality " + baseInfo.product + " for Most Demanding People. Dont Wait and Order Right Now.",
+            "Quality " + baseInfo.product + " for Most Demanding People. Don't Wait and Order Right Now.",
             `Best ${baseInfo.product} in ${locationTarget}. Order Now and Enjoy! `,
-            `Dont Miss an Incredible Opportunity. Buy ${baseInfo.product} Now!`,
+            `Don't Miss an Incredible Opportunity. Buy ${baseInfo.product} Now!`,
             `Fast Shipping Right to Your Home. Only Secure Payments`,
             `Delivering Only Best Experience and Best Quality ${baseInfo.product}.`,
             `Ready-To-Help Support and Fast Shipping.`,
@@ -236,7 +236,7 @@ function builtDescriptions() {
             `Follow Your Dream And Get Your ${baseInfo.product} From The Best Ones.`,
             `We All Need a ${baseInfo.product}. So Why Not Get One Now?`,
             `Stay Alert! You Can Miss Great Deal And Discount.`,
-            `Everyone Want To Have These ${baseInfo.product}. But You Can have It!`,
+            `Everyone Wants To Have These ${baseInfo.product}. But You Can have It!`,
             
 
         ]
