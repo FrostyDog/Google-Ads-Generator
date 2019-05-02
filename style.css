@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: white;
+  color: rgba(10, 10, 10, 0.982);
   text-decoration: none;
   text-transform: none;
 }
