@@ -308,7 +308,7 @@ summary {
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
-    align-items:center;
+    align-items: center;
 }
 
 details a{

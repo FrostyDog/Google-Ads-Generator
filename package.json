@@ -1,0 +1,29 @@
+{
+  "name": "adgenerators",
+  "version": "1.0.0",
+  "description": "This is a generator for the creating ads. Application is web-based and developed by FrostDog. year 2019.",
+  "main": "index.html",
+  "scripts": {
+    "test": "test",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrostyDog/Google-Ads-Generator.git"
+  },
+  "keywords": [
+    "Creating",
+    "Ads",
+    "generator"
+  ],
+  "author": "FrostDog (Aleks Gubskyy)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrostyDog/Google-Ads-Generator/issues"
+  },
+  "homepage": "https://github.com/FrostyDog/Google-Ads-Generator#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "php": "0.0.1"
+  }
+}
