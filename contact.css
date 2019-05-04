@@ -15,11 +15,12 @@
   /*//////////////////////////////////////////////////////////////////
   [ RESTYLE TAG ]*/
   
-  * {
+  /* * {
       margin: 0px; 
       padding: 0px; 
       box-sizing: border-box;
-  }
+  } */
+
   
   body, html {
       height: 100%;
@@ -28,9 +29,9 @@
   
   /*---------------------------------------------*/
   a {
-      font-family: Ubuntu-Bold;
-      font-size: 14px;
-      line-height: 1.7;
+      font-family: 'Times New Roman', Times, serif;
+      /* font-size: 14px;
+      line-height: 1.7; */
       color: #666666;
       margin: 0px;
       transition: all 0.4s;
@@ -128,6 +129,11 @@
   
   /*//////////////////////////////////////////////////////////////////
   [ Contact ]*/
+  .contact100-contact100 * {
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+  }
   
   .container-contact100 {
     width: 100%;
@@ -143,6 +149,7 @@
     padding: 15px;
     /* position: relative; */
     background-color: #f2f2f2;
+    box-sizing: border-box;
   }
   
   .wrap-contact100 {
@@ -161,12 +168,13 @@
   
   .contact100-form-title {
     display: block;
-    font-family: Ubuntu-Bold;
-    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
     color: #403866;
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
+    margin-left: 15%;
     padding-bottom: 49px;
   }
   
@@ -263,6 +271,7 @@
     height: 62px;
     background-color: transparent;
     border-radius: 31px;
+    margin-left: 15%;
   
     font-family: Ubuntu-Bold;
     font-size: 16px;

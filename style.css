@@ -73,11 +73,33 @@ header {
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
- justify-content: space-around;
+ justify-content: space-between;
  align-items: center;
  max-width: 90%;
  padding: 0 20px;
  /* box-shadow: 0 8px 6px -6px black; */
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+      flex-direction: column;
+    }
+  }
+
+header div {
+    /* background-color: rgba(10, 10, 10, 0.982); */
+    margin: 20px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+header h1{
+    padding: 5px 10px;
+    margin: 20px 20px 5px 20px;
 }
 
 /* @media only screen and (max-width: 600px) {
@@ -110,12 +132,12 @@ nav a{
       letter-spacing: 0.1em;
     }
 
-nav div:hover{
+nav div:hover {
     background-color: rgba(10, 10, 10, 0.582);
     cursor: pointer;
     }
 
-nav a:hover{
+nav a:hover, header div:hover {
     text-decoration: none;
     }
 
