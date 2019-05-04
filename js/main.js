@@ -13,6 +13,8 @@ submit.addEventListener("click", function (e) {
     var captureKeywords = document.getElementById("keywords-name");
     var captureFinalUrl = document.getElementById("final-url");
 
+
+
     locationTarget = document.getElementById("location-info").value; // working - could be connected to the functions below.
     // Have a connection to description builder and keywords one. 
     //Capturing stance of triggers 
@@ -37,6 +39,19 @@ submit.addEventListener("click", function (e) {
         finalUrl: captureFinalUrl.value,
     }
 
+    if (baseInfo.companyName == "" || baseInfo.product == "")                                  
+    { 
+        window.alert("Please enter your Company name and product"); 
+        return false; 
+    } 
+   
+    else if (baseInfo.finalUrl== "")                               
+    { 
+        window.alert("I also need Final URL to proceed"); 
+        return false; 
+    } else {
+        console.log("YES!")
+
     // executing main structure functions
 
     createTableRow()
@@ -47,7 +62,7 @@ submit.addEventListener("click", function (e) {
     addAdGroupCampaign();
 
 
-}
+}}
 
 )
 
