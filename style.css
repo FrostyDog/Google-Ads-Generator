@@ -14,7 +14,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;   
+    background-size: cover;
     transition: all 0.5s ease;
 }
 
@@ -240,6 +240,16 @@ input {
     margin-top: 5px;
 }
 
+.column {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  flex-direction: column;
+
+}
+
 .columns {
     display: flex;
     display: -webkit-box;
@@ -327,56 +337,56 @@ td:nth-child(2),td:nth-child(3)  {
 }
 
 /*
-TABLE Responsive CSS 
+TABLE Responsive CSS
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media 
+@media
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
+	table, thead, tbody, th, td, tr {
+		display: block;
 	}
-	
+
 	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
+	thead tr {
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
-	
+
 	tr { border: 1px solid #ccc; }
-	
-	td { 
+
+	td {
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee; 
+		border-bottom: 1px solid #eee;
 		position: relative;
-        padding-left: 50%; 
+        padding-left: 50%;
         min-height: 20px;
 	}
-	
-	td:before { 
+
+	td:before {
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
+		width: 45%;
+		padding-right: 10px;
 		white-space: nowrap;
     }
-    
+
     header div {
         /* background-color: rgba(10, 10, 10, 0.982); */
-         margin: 10px; 
-         margin-left: 0; 
+         margin: 10px;
+         margin-left: 0;
         border-radius: 5px;
     }
-	
+
 	/*
 	Label the data
 	*/
@@ -425,6 +435,3 @@ summary {
 details a{
     color:rgb(8, 6, 8);
 }
-
-
-
